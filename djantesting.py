@@ -5,9 +5,9 @@ import requests
 
 def login(usr, psw):
         driver.find_element_by_xpath("//input[@name=\"username\"]")\
-            .send_keys(username)
+            .send_keys(usr)
         driver.find_element_by_xpath("//input[@name=\"password\"]")\
-            .send_keys(pw)
+            .send_keys(psw)
         driver.find_element_by_xpath('//button[@type="submit"]')\
             .click()
         sleep(4)
