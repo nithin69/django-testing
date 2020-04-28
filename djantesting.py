@@ -17,7 +17,6 @@ def extractLinks(sitelink):
     linksLst = []
     for elem in elems:
         linksLst.append(elem.get_attribute("href"))
-    print("linksList", linksLst)
     return(linksLst)
 
 def checkStatus(el):
@@ -31,20 +30,19 @@ def checkStatus(el):
                 comLinks.append([l, res.status_code])
             else:
                 errLinks.append([l, res.status_code])
-    print("comLinks", comLinks)
-    print("errLinks", errLinks)
     return (comLinks, errLinks)
 
 
 sitelink = input("link : ")
-loginBool = input("Does login exists : ")
+loginBool = input("Does login exists (Y/N): ")
 path = "C:\Program Files (x86)\chromedriver.exe"
 driver = webdriver.Chrome(path)
 driver.get(sitelink)
 
 
 
-if loginBool == "True" or loginBool == "T" or loginBool == "t" or loginBool =="true":
+# if loginBool == "True" or loginBool == "T" or loginBool == "t" or loginBool =="true" or 
+if loginBool =="Y" or loginBool =="y":
     usr = input("username : ")
     psw = input("password : ")
     login(usr, psw)
